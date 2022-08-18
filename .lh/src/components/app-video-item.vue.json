@@ -1,0 +1,134 @@
+{
+    "sourceFile": "src/components/app-video-item.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1660720817303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660722791189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,22 @@\n           1314\r\n         </span>\r\n       </div>\r\n     </div>\r\n-    <p class=\"title\">当你觉得扛不住的时候来看看这段视频</p>\r\n+    <p class=\"title\"></p>\r\n   </router-link>\r\n </template>\r\n \r\n <script setup lang=\"ts\">\r\n+import { setup } from 'mockjs';\r\n+props: {\r\n+ video: Array\r\n+};\r\n \r\n+\r\n+\r\n+\r\n+\r\n </script>\r\n \r\n <style lang=\"less\" scoped>\r\n .v-card {\r\n"
+                },
+                {
+                    "date": 1660722818478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   </router-link>\r\n </template>\r\n \r\n <script setup lang=\"ts\">\r\n-import { setup } from 'mockjs';\r\n+\r\n props: {\r\n  video: Array\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1660722874052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,18 +18,27 @@\n     <p class=\"title\"></p>\r\n   </router-link>\r\n </template>\r\n \r\n-<script setup lang=\"ts\">\r\n+<script lang=\"ts\">\r\n \r\n props: {\r\n  video: Array\r\n };\r\n+setup(props) {\r\n+    // 可以打印查看一下props传过来的属性以及属性的值\r\n+\tconsole.log(props);\r\n+\t\r\n+\treturn {\r\n+\t\tprops\r\n+\t}\r\n+}\r\n \r\n \r\n \r\n \r\n \r\n+\r\n </script>\r\n \r\n <style lang=\"less\" scoped>\r\n .v-card {\r\n"
+                },
+                {
+                    "date": 1660723008111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,13 +18,15 @@\n     <p class=\"title\"></p>\r\n   </router-link>\r\n </template>\r\n \r\n-<script lang=\"ts\">\r\n+<script setup lang=\"ts\">\r\n+import { setup } from 'mockjs';\r\n \r\n+\r\n props: {\r\n  video: Array\r\n-};\r\n+},\r\n setup(props) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n \tconsole.log(props);\r\n \t\r\n"
+                },
+                {
+                    "date": 1660723174486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,29 +18,30 @@\n     <p class=\"title\"></p>\r\n   </router-link>\r\n </template>\r\n \r\n-<script setup lang=\"ts\">\r\n-import { setup } from 'mockjs';\r\n-\r\n-\r\n-props: {\r\n- video: Array\r\n-},\r\n-setup(props) {\r\n+<script lang=\"ts\">\r\n+export default{\r\n+  \r\n+  props:['video'],\r\n+setup(props,context) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n \tconsole.log(props);\r\n \t\r\n \treturn {\r\n \t\tprops\r\n \t}\r\n }\r\n+}\r\n \r\n \r\n \r\n \r\n \r\n \r\n+\r\n+\r\n+\r\n </script>\r\n \r\n <style lang=\"less\" scoped>\r\n .v-card {\r\n"
+                },
+                {
+                    "date": 1660723217462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   \r\n   props:['video'],\r\n setup(props,context) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n-\tconsole.log(props);\r\n+\tconsole.log(props.video);\r\n \t\r\n \treturn {\r\n \t\tprops\r\n \t}\r\n"
+                },
+                {
+                    "date": 1660723236841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n <script lang=\"ts\">\r\n export default{\r\n   \r\n   props:['video'],\r\n-setup(props,context) {\r\n+setup(props) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n \tconsole.log(props.video);\r\n \t\r\n \treturn {\r\n"
+                },
+                {
+                    "date": 1660723346948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,16 @@\n   </router-link>\r\n </template>\r\n \r\n <script lang=\"ts\">\r\n+\r\n+import {reactive} from 'vue'\r\n export default{\r\n   \r\n   props:['video'],\r\n setup(props) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n+    const list = reactive(props.video)\r\n \tconsole.log(props.video);\r\n \t\r\n \treturn {\r\n \t\tprops\r\n"
+                },
+                {
+                    "date": 1660723413963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,17 +20,17 @@\n </template>\r\n \r\n <script lang=\"ts\">\r\n \r\n-import {reactive} from 'vue'\r\n+import {ref} from 'vue'\r\n export default{\r\n   \r\n   props:['video'],\r\n setup(props) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n-    const list = reactive(props.video)\r\n+    const list = ref({})\r\n \tconsole.log(props.video);\r\n-\t\r\n+\tlist.value = props.video\r\n \treturn {\r\n \t\tprops\r\n \t}\r\n }\r\n"
+                },
+                {
+                    "date": 1660723425856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,10 @@\n     const list = ref({})\r\n \tconsole.log(props.video);\r\n \tlist.value = props.video\r\n \treturn {\r\n-\t\tprops\r\n+\t\tprops,\r\n+    list\r\n \t}\r\n }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1660723467507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n           1314\r\n         </span>\r\n       </div>\r\n     </div>\r\n-    <p class=\"title\"></p>\r\n+    <p class=\"title\">{{list.desc}}</p>\r\n   </router-link>\r\n </template>\r\n \r\n <script lang=\"ts\">\r\n"
+                },
+                {
+                    "date": 1660723490117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n           41.4万\r\n         </span>\r\n         <span>\r\n           <i class=\"iconfont icon_shipin_danmushu\"></i>\r\n-          1314\r\n+          {{list.commentCount}}\r\n         </span>\r\n       </div>\r\n     </div>\r\n     <p class=\"title\">{{list.desc}}</p>\r\n"
+                },
+                {
+                    "date": 1660723504979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n       </div>\r\n       <div class=\"count\">\r\n         <span>\r\n           <i class=\"iconfont icon_shipin_bofangshu\"></i>\r\n-          41.4万\r\n+         {{list.playCount}}\r\n         </span>\r\n         <span>\r\n           <i class=\"iconfont icon_shipin_danmushu\"></i>\r\n           {{list.commentCount}}\r\n"
+                },
+                {
+                    "date": 1660723549846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <router-link class=\"v-card\" :to=\"`/video/0`\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n-        <img class=\"pic\" src=\"@/assets/images/loading.png\" alt=\"视频描述\" />\r\n+        <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n       <div class=\"count\">\r\n         <span>\r\n           <i class=\"iconfont icon_shipin_bofangshu\"></i>\r\n"
+                },
+                {
+                    "date": 1660723691643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <router-link class=\"v-card\" :to=\"`/video/0`\">\r\n+  <router-link class=\"v-card\" :to=\"`list.videoSrc`\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1660723703668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <router-link class=\"v-card\" :to=\"`list.videoSrc`\">\r\n+  <router-link class=\"v-card\" :to=\"list.videoSrc\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1660723720742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   props:['video'],\r\n setup(props) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n     const list = ref({})\r\n-\tconsole.log(props.video);\r\n+\t//console.log(props.video);\r\n \tlist.value = props.video\r\n \treturn {\r\n \t\tprops,\r\n     list\r\n"
+                },
+                {
+                    "date": 1660723800868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <router-link class=\"v-card\" :to=\"list.videoSrc\">\r\n+  <a class=\"v-card\" :href=\"list.videoSrc\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n@@ -15,9 +15,9 @@\n         </span>\r\n       </div>\r\n     </div>\r\n     <p class=\"title\">{{list.desc}}</p>\r\n-  </router-link>\r\n+  </a>\r\n </template>\r\n \r\n <script lang=\"ts\">\r\n \r\n"
+                },
+                {
+                    "date": 1660723822572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <a class=\"v-card\" :href=\"list.videoSrc\">\r\n+  <a class=\"v-card\" href=\"list.videoSrc\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1660723898622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <a class=\"v-card\" href=\"list.videoSrc\">\r\n+  <a class=\"v-card\" href=\"https://www.bilibili.com/video/BV1fY4y1F7GL?spm_id_from=333.909.b_6368616e6e656c5f64657461696c5f31363230323536.46&vd_source=9b101a4aca8325724def65b43a267776\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1660729261165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,28 +24,21 @@\n import {ref} from 'vue'\r\n export default{\r\n   \r\n   props:['video'],\r\n-setup(props) {\r\n+setup(props:[video:{}]) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n     const list = ref({})\r\n \t//console.log(props.video);\r\n+  console.log(props);\r\n+  \r\n \tlist.value = props.video\r\n \treturn {\r\n \t\tprops,\r\n     list\r\n \t}\r\n }\r\n }\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n-\r\n </script>\r\n \r\n <style lang=\"less\" scoped>\r\n .v-card {\r\n"
+                },
+                {
+                    "date": 1660729337358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n import {ref} from 'vue'\r\n export default{\r\n   \r\n   props:['video'],\r\n-setup(props:[video:{}]) {\r\n+setup(props:[]) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n     const list = ref({})\r\n \t//console.log(props.video);\r\n   console.log(props);\r\n"
+                },
+                {
+                    "date": 1660729707732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <a class=\"v-card\" href=\"https://www.bilibili.com/video/BV1fY4y1F7GL?spm_id_from=333.909.b_6368616e6e656c5f64657461696c5f31363230323536.46&vd_source=9b101a4aca8325724def65b43a267776\">\r\n+  <router class=\"v-card\" :to=\"`/video/${video.id}}`\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n@@ -15,9 +15,9 @@\n         </span>\r\n       </div>\r\n     </div>\r\n     <p class=\"title\">{{list.desc}}</p>\r\n-  </a>\r\n+  </router>\r\n </template>\r\n \r\n <script lang=\"ts\">\r\n \r\n"
+                },
+                {
+                    "date": 1660729728895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <router class=\"v-card\" :to=\"`/video/${video.id}}`\">\r\n+  <router-link class=\"v-card\" :to=\"`/video/${video.id}}`\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n       </div>\r\n@@ -15,9 +15,9 @@\n         </span>\r\n       </div>\r\n     </div>\r\n     <p class=\"title\">{{list.desc}}</p>\r\n-  </router>\r\n+  </router-link>\r\n </template>\r\n \r\n <script lang=\"ts\">\r\n \r\n"
+                },
+                {
+                    "date": 1660729787119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n-  <router-link class=\"v-card\" :to=\"`/video/${video.id}}`\">\r\n+  <router-link class=\"v-card\" :to=\"`/video/${list.id}}`\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n-        <img class=\"pic\" :src=\"list.imgSrc\" alt=\"视频描述\" />\r\n+        <img class=\"pic\" :src=\"list.imgSrc\" alt=\"list.desc\" />\r\n       </div>\r\n       <div class=\"count\">\r\n         <span>\r\n           <i class=\"iconfont icon_shipin_bofangshu\"></i>\r\n"
+                },
+                {
+                    "date": 1660729811537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <router-link class=\"v-card\" :to=\"`/video/${list.id}}`\">\r\n+  <router-link class=\"v-card\" :to=\"`/video/${list.id}`\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n         <img class=\"pic\" :src=\"list.imgSrc\" alt=\"list.desc\" />\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1660729963054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n import {ref} from 'vue'\r\n export default{\r\n   \r\n   props:['video'],\r\n-setup(props:[]) {\r\n+setup(props) {\r\n     // 可以打印查看一下props传过来的属性以及属性的值\r\n     const list = ref({})\r\n \t//console.log(props.video);\r\n   console.log(props);\r\n"
+                },
+                {
+                    "date": 1660730135465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,29 +18,29 @@\n     <p class=\"title\">{{list.desc}}</p>\r\n   </router-link>\r\n </template>\r\n \r\n-<script lang=\"ts\">\r\n-\r\n-import {ref} from 'vue'\r\n-export default{\r\n-  \r\n-  props:['video'],\r\n-setup(props) {\r\n-    // 可以打印查看一下props传过来的属性以及属性的值\r\n-    const list = ref({})\r\n-\t//console.log(props.video);\r\n-  console.log(props);\r\n-  \r\n-\tlist.value = props.video\r\n-\treturn {\r\n-\t\tprops,\r\n-    list\r\n-\t}\r\n+<script setup lang=\"ts\">\r\n+import { defineProps, PropType } from 'vue'\r\n+interface IVideoItem {\r\n+  id: number\r\n+  imgSrc: string\r\n+  desc: string\r\n+  playCount: string\r\n+  commentCount: string\r\n+  videoSrc: string\r\n }\r\n-}\r\n+// 父传子需要通过 defineProps 接收\r\n+// PropType 用于指定格式\r\n+defineProps({\r\n+  video: {\r\n+    // Object 对象为 IVideoItem 接口格式\r\n+    // 需要定义这个接口类型，所以需要导入ProType\r\n+    type: Object as PropType<IVideoItem>,\r\n+    required: true\r\n+  }\r\n+})\r\n </script>\r\n-\r\n <style lang=\"less\" scoped>\r\n .v-card {\r\n   width: 50%;\r\n   padding: 2vw 1vw;\r\n"
+                },
+                {
+                    "date": 1660730175981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,22 @@\n <template>\r\n-  <router-link class=\"v-card\" :to=\"`/video/${list.id}`\">\r\n+  <router-link class=\"v-card\" :to=\"`/video/${video.id}`\">\r\n     <div class=\"card\">\r\n       <div class=\"card-img\">\r\n-        <img class=\"pic\" :src=\"list.imgSrc\" alt=\"list.desc\" />\r\n+        <img class=\"pic\" :src=\"video.imgSrc\" alt=\"video.desc\" />\r\n       </div>\r\n       <div class=\"count\">\r\n         <span>\r\n           <i class=\"iconfont icon_shipin_bofangshu\"></i>\r\n-         {{list.playCount}}\r\n+         {{video.playCount}}\r\n         </span>\r\n         <span>\r\n           <i class=\"iconfont icon_shipin_danmushu\"></i>\r\n-          {{list.commentCount}}\r\n+          {{video.commentCount}}\r\n         </span>\r\n       </div>\r\n     </div>\r\n-    <p class=\"title\">{{list.desc}}</p>\r\n+    <p class=\"title\">{{video.desc}}</p>\r\n   </router-link>\r\n </template>\r\n \r\n <script setup lang=\"ts\">\r\n"
+                }
+            ],
+            "date": 1660720817303,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <router-link class=\"v-card\" :to=\"`/video/0`\">\r\n    <div class=\"card\">\r\n      <div class=\"card-img\">\r\n        <img class=\"pic\" src=\"@/assets/images/loading.png\" alt=\"视频描述\" />\r\n      </div>\r\n      <div class=\"count\">\r\n        <span>\r\n          <i class=\"iconfont icon_shipin_bofangshu\"></i>\r\n          41.4万\r\n        </span>\r\n        <span>\r\n          <i class=\"iconfont icon_shipin_danmushu\"></i>\r\n          1314\r\n        </span>\r\n      </div>\r\n    </div>\r\n    <p class=\"title\">当你觉得扛不住的时候来看看这段视频</p>\r\n  </router-link>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<style lang=\"less\" scoped>\r\n.v-card {\r\n  width: 50%;\r\n  padding: 2vw 1vw;\r\n  .card {\r\n    position: relative;\r\n    background: #f3f3f3 url(~@/assets/images/default.png) center no-repeat;\r\n    background-size: 36%;\r\n    border-radius: 0.53333vw;\r\n    overflow: hidden;\r\n    .card-img {\r\n      .pic {\r\n        height: 100px;\r\n        width: 100%;\r\n        object-fit: cover;\r\n      }\r\n    }\r\n    .count {\r\n      background-image: linear-gradient(0deg, #000000d9, #0000);\r\n      color: #fff;\r\n      position: absolute;\r\n      bottom: 0;\r\n      left: 0;\r\n      right: 0;\r\n      font-size: 3vw;\r\n      display: flex;\r\n      align-items: center;\r\n      justify-content: space-between;\r\n      padding: 1.2vw 1.5vw;\r\n      span {\r\n        .iconfont {\r\n          font-size: 3vw;\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .title {\r\n    margin-top: 1.5vw;\r\n    font-size: 3.2vw;\r\n    color: #212121;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    display: -webkit-box;\r\n    -webkit-line-clamp: 2;\r\n    -webkit-box-orient: vertical;\r\n  }\r\n}\r\n</style>\r\n"
+        }
+    ]
+}

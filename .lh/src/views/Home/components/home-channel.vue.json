@@ -1,0 +1,106 @@
+{
+    "sourceFile": "src/views/Home/components/home-channel.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1660703502451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660703599004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+<template>\r\n+  <van-tabs v-model:active=\"active\">\r\n+  <van-tab title=\"标签 1\">内容 1</van-tab>\r\n+  <van-tab title=\"标签 2\">内容 2</van-tab>\r\n+  <van-tab title=\"标签 3\">内容 3</van-tab>\r\n+  <van-tab title=\"标签 4\">内容 4</van-tab>\r\n+</van-tabs>\r\n+\r\n+</template>\r\n+\r\n+<script>\r\n+import { ref } from 'vue';\r\n+\r\n+export default {\r\n+  setup() {\r\n+    const active = ref(0);\r\n+    return { active };\r\n+  },\r\n+};\r\n+\r\n+</script>\r\n+\r\n+<style>\r\n+\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660703814852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n </van-tabs>\r\n \r\n </template>\r\n \r\n-<script>\r\n+<script lang=\"ts\">\r\n import { ref } from 'vue';\r\n \r\n export default {\r\n   setup() {\r\n"
+                },
+                {
+                    "date": 1660704122797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,18 +7,17 @@\n </van-tabs>\r\n \r\n </template>\r\n \r\n-<script lang=\"ts\">\r\n+<script setup lang=\"ts\">\r\n import { ref } from 'vue';\r\n \r\n-export default {\r\n-  setup() {\r\n+\r\n+\r\n     const active = ref(0);\r\n     return { active };\r\n-  },\r\n-};\r\n \r\n+\r\n </script>\r\n \r\n <style>\r\n \r\n"
+                },
+                {
+                    "date": 1660704134271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,17 +7,18 @@\n </van-tabs>\r\n \r\n </template>\r\n \r\n-<script setup lang=\"ts\">\r\n+<script  lang=\"ts\">\r\n import { ref } from 'vue';\r\n \r\n-\r\n-\r\n+export default {\r\n+  setup() {\r\n     const active = ref(0);\r\n     return { active };\r\n+  },\r\n+};\r\n \r\n-\r\n </script>\r\n \r\n <style>\r\n \r\n"
+                },
+                {
+                    "date": 1660704160080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n </template>\r\n \r\n <script  lang=\"ts\">\r\n import { ref } from 'vue';\r\n-\r\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n     return { active };\r\n"
+                },
+                {
+                    "date": 1660708500681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,13 @@\n </template>\r\n \r\n <script  lang=\"ts\">\r\n import { ref } from 'vue';\r\n+import axios from 'axios'\r\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n+    \r\n     return { active };\r\n   },\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1660708523303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,12 @@\n import axios from 'axios'\r\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n-    \r\n+    axios({\r\n+      url:'/swiperList',\r\n+      method:'get'\r\n+    })\r\n     return { active };\r\n   },\r\n };\r\n \r\n"
+                },
+                {
+                    "date": 1660708574246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,11 @@\n     const active = ref(0);\r\n     axios({\r\n       url:'/swiperList',\r\n       method:'get'\r\n+    }).then(res=>{\r\n+      console.log(res.data);\r\n+      \r\n     })\r\n     return { active };\r\n   },\r\n };\r\n"
+                },
+                {
+                    "date": 1660708585602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     axios({\r\n       url:'/swiperList',\r\n       method:'get'\r\n     }).then(res=>{\r\n-      console.log(res.data);\r\n+      console.log(res);\r\n       \r\n     })\r\n     return { active };\r\n   },\r\n"
+                },
+                {
+                    "date": 1660708795129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n <template>\r\n   <van-tabs v-model:active=\"active\">\r\n   <van-tab title=\"标签 1\">内容 1</van-tab>\r\n-  <van-tab title=\"标签 2\">内容 2</van-tab>\r\n-  <van-tab title=\"标签 3\">内容 3</van-tab>\r\n-  <van-tab title=\"标签 4\">内容 4</van-tab>\r\n+  \r\n </van-tabs>\r\n \r\n </template>\r\n \r\n@@ -13,16 +11,17 @@\n import axios from 'axios'\r\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n+    const list = ref([])\r\n     axios({\r\n       url:'/swiperList',\r\n       method:'get'\r\n     }).then(res=>{\r\n-      console.log(res);\r\n+      list.value = res.data\r\n       \r\n     })\r\n-    return { active };\r\n+    return { active,axios };\r\n   },\r\n };\r\n \r\n </script>\r\n"
+                },
+                {
+                    "date": 1660708856356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     }).then(res=>{\r\n       list.value = res.data\r\n       \r\n     })\r\n-    return { active,axios };\r\n+    return { active,list };\r\n   },\r\n };\r\n \r\n </script>\r\n"
+                },
+                {
+                    "date": 1660709421494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     axios({\r\n       url:'/swiperList',\r\n       method:'get'\r\n     }).then(res=>{\r\n-      list.value = res.data\r\n+      list.value = res.data.result\r\n       \r\n     })\r\n     return { active,list };\r\n   },\r\n"
+                },
+                {
+                    "date": 1660709620177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   setup() {\r\n     const active = ref(0);\r\n     const list = ref([])\r\n     axios({\r\n-      url:'/swiperList',\r\n+      url:'/navList',\r\n       method:'get'\r\n     }).then(res=>{\r\n       list.value = res.data.result\r\n       \r\n"
+                },
+                {
+                    "date": 1660709699306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n <template>\r\n   <van-tabs v-model:active=\"active\">\r\n-  <van-tab title=\"标签 1\">内容 1</van-tab>\r\n+  <van-tab v-for=\"item in List\" :key=\"item.id\">{{item.text}}</van-tab>\r\n   \r\n </van-tabs>\r\n \r\n </template>\r\n \r\n <script  lang=\"ts\">\r\n import { ref } from 'vue';\r\n import axios from 'axios'\r\n+import { List } from 'vant';\r\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n     const list = ref([])\r\n"
+                },
+                {
+                    "date": 1660709729528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \r\n <script  lang=\"ts\">\r\n import { ref } from 'vue';\r\n import axios from 'axios'\r\n-import { List } from 'vant';\r\n+\r\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n     const list = ref([])\r\n"
+                },
+                {
+                    "date": 1660715419471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <van-tabs v-model:active=\"active\">\r\n-  <van-tab v-for=\"item in List\" :key=\"item.id\">{{item.text}}</van-tab>\r\n+  <van-tab v-for=\"item in List\" :key=\"item.id\" :title=\"item.text\"></van-tab>\r\n   \r\n </van-tabs>\r\n \r\n </template>\r\n"
+                },
+                {
+                    "date": 1660715460170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <van-tabs v-model:active=\"active\">\r\n-  <van-tab v-for=\"item in List\" :key=\"item.id\" :title=\"item.text\"></van-tab>\r\n+  <van-tab v-for=\"item in list\" :key=\"item.id\" :title=\"item.text\"></van-tab>\r\n   \r\n </van-tabs>\r\n \r\n </template>\r\n"
+                },
+                {
+                    "date": 1660715733573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,15 @@\n \r\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n-    const list = ref([])\r\n+    //频道数据\r\n+    const list = ref<INavItem[]>([])\r\n+    //定义格式\r\n+    interface INavItem{\r\n+      id:string,\r\n+      text:string\r\n+    }\r\n     axios({\r\n       url:'/navList',\r\n       method:'get'\r\n     }).then(res=>{\r\n"
+                },
+                {
+                    "date": 1660717676501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n export default {\r\n   setup() {\r\n     const active = ref(0);\r\n     //频道数据\r\n-    const list = ref<INavItem[]>([])\r\n+    const list = ref<INavItem[]>([])//泛型，数组的每一项都必须符合INavItem定义的类型\r\n     //定义格式\r\n     interface INavItem{\r\n       id:string,\r\n       text:string\r\n"
+                },
+                {
+                    "date": 1660718065161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,14 @@\n </van-tabs>\r\n \r\n </template>\r\n \r\n-<script  lang=\"ts\">\r\n+<script setup  lang=\"ts\">\r\n import { ref } from 'vue';\r\n import axios from 'axios'\r\n \r\n-export default {\r\n-  setup() {\r\n+\r\n+  \r\n     const active = ref(0);\r\n     //频道数据\r\n     const list = ref<INavItem[]>([])//泛型，数组的每一项都必须符合INavItem定义的类型\r\n     //定义格式\r\n@@ -26,12 +26,12 @@\n     }).then(res=>{\r\n       list.value = res.data.result\r\n       \r\n     })\r\n-    return { active,list };\r\n-  },\r\n-};\r\n+   \r\n+  \r\n \r\n+\r\n </script>\r\n \r\n <style>\r\n \r\n"
+                },
+                {
+                    "date": 1660718343795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,12 @@\n \r\n <script setup  lang=\"ts\">\r\n import { ref } from 'vue';\r\n import axios from 'axios'\r\n-\r\n-\r\n-  \r\n     const active = ref(0);\r\n     //频道数据\r\n     const list = ref<INavItem[]>([])//泛型，数组的每一项都必须符合INavItem定义的类型\r\n-    //定义格式\r\n+    //ts的接口用于标记数据格式\r\n     interface INavItem{\r\n       id:string,\r\n       text:string\r\n     }\r\n@@ -32,7 +29,4 @@\n \r\n \r\n </script>\r\n \r\n-<style>\r\n-\r\n-</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660718437891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n <script setup  lang=\"ts\">\r\n import { ref } from 'vue';\r\n import axios from 'axios'\r\n     const active = ref(0);\r\n-    //频道数据\r\n+    //频道数据，<INavItem[]>表示list数据为数组，数组的每一项需要符合INavItem\r\n+    //好吃：模板中使用list和item的时候，鼠标移入有类型提醒。\r\n     const list = ref<INavItem[]>([])//泛型，数组的每一项都必须符合INavItem定义的类型\r\n     //ts的接口用于标记数据格式\r\n     interface INavItem{\r\n       id:string,\r\n"
+                }
+            ],
+            "date": 1660703502451,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

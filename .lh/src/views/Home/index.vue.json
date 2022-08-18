@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/views/Home/index.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1660699783210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660700160486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <template>\r\n- <h1>Bilibili主页</h1>\r\n- <router-link to=\"/video/1\">点我去视频详情页</router-link>\r\n+     <h1>Bilibili主页</h1>\r\n+     <router-link to=\"/video/1\">点我去视频详情页</router-link>\r\n </template>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660701416152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n <template>\r\n-     <h1>Bilibili主页</h1>\r\n-     <router-link to=\"/video/1\">点我去视频详情页</router-link>\r\n-</template>\n\\ No newline at end of file\n+    <AppHeader/>\r\n+</template>\r\n+<script setup lang=\"ts\">\r\n+import AppHeader from '@/components/app-header.vue'\r\n+</script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660703914502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n <template>\r\n+   <!-- 头部组件 -->\r\n     <AppHeader/>\r\n+    <!-- 频道组件 -->\r\n+    <HomeChannel/>\r\n </template>\r\n <script setup lang=\"ts\">\r\n import AppHeader from '@/components/app-header.vue'\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660704035256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,6 @@\n     <HomeChannel/>\r\n </template>\r\n <script setup lang=\"ts\">\r\n import AppHeader from '@/components/app-header.vue'\r\n+import HomeChannel from '@/views/Home/components/home-channel.vue'\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660719306012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n    <!-- 头部组件 -->\r\n     <AppHeader/>\r\n     <!-- 频道组件 -->\r\n     <HomeChannel/>\r\n+    <HomeSwipe/>\r\n </template>\r\n <script setup lang=\"ts\">\r\n import AppHeader from '@/components/app-header.vue'\r\n import HomeChannel from '@/views/Home/components/home-channel.vue'\r\n+import HomeSwipe from '@/views/Home/components/HomeSwipe.vue'\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660719317233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n </template>\r\n <script setup lang=\"ts\">\r\n import AppHeader from '@/components/app-header.vue'\r\n import HomeChannel from '@/views/Home/components/home-channel.vue'\r\n-import HomeSwipe from '@/views/Home/components/HomeSwipe.vue'\r\n+import HomeSwipe from '@/views/Home/components/home-channel.vue'\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660719331178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n </template>\r\n <script setup lang=\"ts\">\r\n import AppHeader from '@/components/app-header.vue'\r\n import HomeChannel from '@/views/Home/components/home-channel.vue'\r\n-import HomeSwipe from '@/views/Home/components/home-channel.vue'\r\n+import HomeSwipe from '@/views/Home/components/home-swipe.vue'\r\n </script>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660719371440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n    <!-- 头部组件 -->\r\n     <AppHeader/>\r\n     <!-- 频道组件 -->\r\n     <HomeChannel/>\r\n+    <!-- 轮播组件 -->\r\n     <HomeSwipe/>\r\n </template>\r\n <script setup lang=\"ts\">\r\n import AppHeader from '@/components/app-header.vue'\r\n"
+                },
+                {
+                    "date": 1660721002254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,13 @@\n     <!-- 频道组件 -->\r\n     <HomeChannel/>\r\n     <!-- 轮播组件 -->\r\n     <HomeSwipe/>\r\n+    <!-- 视频 -->\r\n+    <HomeVideoList/>\r\n </template>\r\n <script setup lang=\"ts\">\r\n import AppHeader from '@/components/app-header.vue'\r\n import HomeChannel from '@/views/Home/components/home-channel.vue'\r\n import HomeSwipe from '@/views/Home/components/home-swipe.vue'\r\n+import HomeVideoList from '@/views/Home/components/home-video-list.vue'\r\n </script>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1660699783210,
+            "name": "Commit-0",
+            "content": "<template>\r\n <h1>Bilibili主页</h1>\r\n <router-link to=\"/video/1\">点我去视频详情页</router-link>\r\n</template>"
+        }
+    ]
+}

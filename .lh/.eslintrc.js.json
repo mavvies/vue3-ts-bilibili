@@ -1,0 +1,34 @@
+{
+    "sourceFile": ".eslintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1660700447041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660700501246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,12 @@\n     },\n     rules: {\n         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n-        \"vue/multi-word-component-names\": \"off\",\n+        // 添加组件命名忽略规则\n+        \"vue/multi-word-component-names\": [\"error\", {\n+            \"ignores\": [\"index\"] //需要忽略的组件名\n+        }]\n \n+\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660700586022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     rules: {\n         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n         // 添加组件命名忽略规则\n-        \"vue/multi-word-component-names\": [\"error\", {\n+        /* \"vue/multi-word-component-names\": [\"error\", {\n             \"ignores\": [\"index\"] //需要忽略的组件名\n-        }]\n+        }] */\n \n \n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660715771294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     rules: {\n         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n         // 添加组件命名忽略规则\n-        /* \"vue/multi-word-component-names\": [\"error\", {\n+        \"vue/multi-word-component-names\": [\"error\", {\n             \"ignores\": [\"index\"] //需要忽略的组件名\n-        }] */\n+        }]\n \n \n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660717995453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     rules: {\n         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n         // 添加组件命名忽略规则\n-        \"vue/multi-word-component-names\": [\"error\", {\n+        /* \"vue/multi-word-component-names\": [\"error\", {\n             \"ignores\": [\"index\"] //需要忽略的组件名\n-        }]\n+        }] */\n \n \n     }\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1660700447041,
+            "name": "Commit-0",
+            "content": "module.exports = {\n    root: true,\n    env: {\n        node: true\n    },\n    extends: [\n        'plugin:vue/vue3-essential',\n        '@vue/standard',\n        '@vue/typescript/recommended'\n    ],\n    parserOptions: {\n        ecmaVersion: 2020\n    },\n    rules: {\n        'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n        'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',\n        \"vue/multi-word-component-names\": \"off\",\n\n    }\n}"
+        }
+    ]
+}

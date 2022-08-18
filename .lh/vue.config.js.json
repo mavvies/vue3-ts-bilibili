@@ -1,0 +1,42 @@
+{
+    "sourceFile": "vue.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1660700326394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660700543207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const { defineConfig } = require('@vue/cli-service')\n module.exports = defineConfig({\n-    lintOnSave: false,\n+    //lintOnSave: false,\n     transpileDependencies: true\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660700573196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n const { defineConfig } = require('@vue/cli-service')\n module.exports = defineConfig({\n-    //lintOnSave: false,\n+    lintOnSave: false,\n     transpileDependencies: true\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660704518391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,14 @@\n const { defineConfig } = require('@vue/cli-service')\n+const { VantResolver } = require('unplugin-vue-components/resolvers');\n+const ComponentsPlugin = require('unplugin-vue-components/webpack');\n module.exports = defineConfig({\n     lintOnSave: false,\n-    transpileDependencies: true\n+    transpileDependencies: true,\n+    configureWebpack: {\n+        plugins: [\n+            ComponentsPlugin({\n+                resolvers: [VantResolver()],\n+            }),\n+        ],\n+    },\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1660715794268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n const ComponentsPlugin = require('unplugin-vue-components/webpack');\n module.exports = defineConfig({\n     lintOnSave: false,\n     transpileDependencies: true,\n+    //vant组件库配置\n     configureWebpack: {\n         plugins: [\n             ComponentsPlugin({\n                 resolvers: [VantResolver()],\n"
+                },
+                {
+                    "date": 1660717874349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const { defineConfig } = require('@vue/cli-service')\n const { VantResolver } = require('unplugin-vue-components/resolvers');\n const ComponentsPlugin = require('unplugin-vue-components/webpack');\n module.exports = defineConfig({\n-    lintOnSave: false,\n+    // lintOnSave: false,\n     transpileDependencies: true,\n     //vant组件库配置\n     configureWebpack: {\n         plugins: [\n"
+                },
+                {
+                    "date": 1660718001083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n const { defineConfig } = require('@vue/cli-service')\n const { VantResolver } = require('unplugin-vue-components/resolvers');\n const ComponentsPlugin = require('unplugin-vue-components/webpack');\n module.exports = defineConfig({\n-    // lintOnSave: false,\n+    lintOnSave: false,\n     transpileDependencies: true,\n     //vant组件库配置\n     configureWebpack: {\n         plugins: [\n"
+                }
+            ],
+            "date": 1660700326394,
+            "name": "Commit-0",
+            "content": "const { defineConfig } = require('@vue/cli-service')\nmodule.exports = defineConfig({\n    lintOnSave: false,\n    transpileDependencies: true\n})"
+        }
+    ]
+}

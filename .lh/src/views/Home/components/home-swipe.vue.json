@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/views/Home/components/home-swipe.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1660719246191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660719465847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,17 @@\n \r\n </template>\r\n \r\n <script setup  lang=\"ts\">\r\n+import axios from \"axios\";\r\n \r\n+axios({\r\n+    url:'/swiperList',\r\n+    method:'get'\r\n+}).then(res=>{\r\n+    console.log(res.data);\r\n+    \r\n+})\r\n </script>\r\n <style>\r\n   .my-swipe .van-swipe-item {\r\n     color: #fff;\r\n"
+                },
+                {
+                    "date": 1660719560539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,16 @@\n \r\n </template>\r\n \r\n <script setup  lang=\"ts\">\r\n+import {ref} from 'vue'\r\n import axios from \"axios\";\r\n-\r\n+const list = ref<INavItem[]>([])//泛型，数组的每一项都必须符合INavItem定义的类型\r\n+    //ts的接口用于标记数据格式\r\n+    interface INavItem{\r\n+      id:string,\r\n+      text:string\r\n+    }\r\n axios({\r\n     url:'/swiperList',\r\n     method:'get'\r\n }).then(res=>{\r\n"
+                },
+                {
+                    "date": 1660719593296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n axios({\r\n     url:'/swiperList',\r\n     method:'get'\r\n }).then(res=>{\r\n-    console.log(res.data);\r\n+    list.value = res.data.result\r\n     \r\n })\r\n </script>\r\n <style>\r\n"
+                },
+                {
+                    "date": 1660719654717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n <template>\r\n     <van-swipe class=\"my-swipe\" :autoplay=\"3000\" indicator-color=\"white\">\r\n         <van-swipe-item>1</van-swipe-item>\r\n-        <van-swipe-item>2</van-swipe-item>\r\n-        <van-swipe-item>3</van-swipe-item>\r\n-        <van-swipe-item>4</van-swipe-item>\r\n+        \r\n     </van-swipe>\r\n \r\n </template>\r\n \r\n@@ -13,10 +11,10 @@\n import axios from \"axios\";\r\n const list = ref<INavItem[]>([])//泛型，数组的每一项都必须符合INavItem定义的类型\r\n     //ts的接口用于标记数据格式\r\n     interface INavItem{\r\n-      id:string,\r\n-      text:string\r\n+      imgSrc:string,\r\n+      link:string\r\n     }\r\n axios({\r\n     url:'/swiperList',\r\n     method:'get'\r\n"
+                },
+                {
+                    "date": 1660719715617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n \r\n <script setup  lang=\"ts\">\r\n import {ref} from 'vue'\r\n import axios from \"axios\";\r\n-const list = ref<INavItem[]>([])//泛型，数组的每一项都必须符合INavItem定义的类型\r\n+const list = ref<ISwiper[]>([])//泛型，数组的每一项都必须符合ISwiper定义的类型\r\n     //ts的接口用于标记数据格式\r\n-    interface INavItem{\r\n+    interface ISwiper{\r\n       imgSrc:string,\r\n       link:string\r\n     }\r\n axios({\r\n"
+                },
+                {
+                    "date": 1660719793673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\r\n     <van-swipe class=\"my-swipe\" :autoplay=\"3000\" indicator-color=\"white\">\r\n-        <van-swipe-item>1</van-swipe-item>\r\n+        <van-swipe-item v-for=\"item in list\" :key=\"item.imgSrc\">\r\n+        <img :src='item.imgSrc'/>\r\n+        </van-swipe-item>\r\n         \r\n     </van-swipe>\r\n \r\n </template>\r\n"
+                },
+                {
+                    "date": 1660719819626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n     <van-swipe class=\"my-swipe\" :autoplay=\"3000\" indicator-color=\"white\">\r\n         <van-swipe-item v-for=\"item in list\" :key=\"item.imgSrc\">\r\n-        <img :src='item.imgSrc'/>\r\n+        <img :src=\"item.imgSrc\"/>\r\n         </van-swipe-item>\r\n         \r\n     </van-swipe>\r\n \r\n"
+                },
+                {
+                    "date": 1660720008926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,10 @@\n axios({\r\n     url:'/swiperList',\r\n     method:'get'\r\n }).then(res=>{\r\n+  console.log(res.data.result);\r\n+  \r\n     list.value = res.data.result\r\n     \r\n })\r\n </script>\r\n"
+                },
+                {
+                    "date": 1660720289418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,10 @@\n     <van-swipe class=\"my-swipe\" :autoplay=\"3000\" indicator-color=\"white\">\r\n         <van-swipe-item v-for=\"item in list\" :key=\"item.imgSrc\">\r\n         <img :src=\"item.imgSrc\"/>\r\n         </van-swipe-item>\r\n-        \r\n     </van-swipe>\r\n-\r\n </template>\r\n-\r\n <script setup  lang=\"ts\">\r\n import {ref} from 'vue'\r\n import axios from \"axios\";\r\n const list = ref<ISwiper[]>([])//泛型，数组的每一项都必须符合ISwiper定义的类型\r\n@@ -20,12 +17,9 @@\n axios({\r\n     url:'/swiperList',\r\n     method:'get'\r\n }).then(res=>{\r\n-  console.log(res.data.result);\r\n-  \r\n     list.value = res.data.result\r\n-    \r\n })\r\n </script>\r\n <style>\r\n   .my-swipe .van-swipe-item {\r\n"
+                }
+            ],
+            "date": 1660719246191,
+            "name": "Commit-0",
+            "content": "<template>\r\n    <van-swipe class=\"my-swipe\" :autoplay=\"3000\" indicator-color=\"white\">\r\n        <van-swipe-item>1</van-swipe-item>\r\n        <van-swipe-item>2</van-swipe-item>\r\n        <van-swipe-item>3</van-swipe-item>\r\n        <van-swipe-item>4</van-swipe-item>\r\n    </van-swipe>\r\n\r\n</template>\r\n\r\n<script setup  lang=\"ts\">\r\n\r\n</script>\r\n<style>\r\n  .my-swipe .van-swipe-item {\r\n    color: #fff;\r\n    font-size: 20px;\r\n    line-height: 150px;\r\n    text-align: center;\r\n    background-color: #39a9ed;\r\n  }\r\n</style>\r\n"
+        }
+    ]
+}

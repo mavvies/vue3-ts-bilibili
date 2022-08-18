@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/main.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1660701824848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1660703118300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,13 @@\n \r\n import '@/assets/styles/base.less'\r\n import '@/assets/styles/iconfont.less'\r\n \r\n-createApp(App).use(router).mount('#app')\r\n+//引入vant\r\n+import { Tab, Tabs } from 'vant';\r\n+\r\n+createApp(App)\r\n+.use(router)\r\n+//注册全局组件\r\n+.use(Tab)\r\n+.use(Tabs)\r\n+.mount('#app')\r\n"
+                },
+                {
+                    "date": 1660704541580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n import { Tab, Tabs } from 'vant';\r\n \r\n createApp(App)\r\n .use(router)\r\n-//注册全局组件\r\n+//注册全局vant组件\r\n .use(Tab)\r\n .use(Tabs)\r\n .mount('#app')\r\n"
+                },
+                {
+                    "date": 1660707812412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n import '@/assets/styles/iconfont.less'\r\n \r\n //引入vant\r\n import { Tab, Tabs } from 'vant';\r\n-\r\n+//引入mock\r\n+import '@/mock/index'\r\n createApp(App)\r\n .use(router)\r\n //注册全局vant组件\r\n .use(Tab)\r\n"
+                },
+                {
+                    "date": 1660719228426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,17 @@\n \r\n import '@/assets/styles/base.less'\r\n import '@/assets/styles/iconfont.less'\r\n \r\n-//引入vant\r\n+//引入vant,按需引入\r\n import { Tab, Tabs } from 'vant';\r\n+import { Swipe, SwipeItem } from 'vant';\r\n //引入mock\r\n import '@/mock/index'\r\n createApp(App)\r\n .use(router)\r\n //注册全局vant组件\r\n .use(Tab)\r\n .use(Tabs)\r\n+.use(Swipe)\r\n+.use(SwipeItem)\r\n .mount('#app')\r\n"
+                }
+            ],
+            "date": 1660701824848,
+            "name": "Commit-0",
+            "content": "import { createApp } from 'vue'\r\nimport App from './App.vue'\r\nimport router from './router'\r\n\r\nimport '@/assets/styles/base.less'\r\nimport '@/assets/styles/iconfont.less'\r\n\r\ncreateApp(App).use(router).mount('#app')\r\n"
+        }
+    ]
+}

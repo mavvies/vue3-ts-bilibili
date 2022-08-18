@@ -1,0 +1,18 @@
+{
+    "sourceFile": "public/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1660720243756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1660720243756,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"\">\n\n<head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">\n    <meta name=\"referrer\" content=\"no-referrer\" />\n    <link rel=\"icon\" href=\"<%= BASE_URL %>favicon.ico\">\n    <title>\n        <%= htmlWebpackPlugin.options.title %>\n    </title>\n</head>\n\n<body>\n    <noscript>\n      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>\n    </noscript>\n    <div id=\"app\"></div>\n    <!-- built files will be auto injected -->\n</body>\n\n</html>"
+        }
+    ]
+}
